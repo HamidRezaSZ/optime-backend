@@ -7,3 +7,4 @@ from .models import *
 class DriverAdmin(admin.ModelAdmin):
     list_display = ('id', 'user', 'free')
     list_editable = ('free',)
+    list_filter = ('free', 'user')

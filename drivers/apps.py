@@ -6,3 +6,6 @@ class DriversConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'drivers'
     verbose_name = _('راننده ها')
+
+    def ready(self) -> None:
+        import drivers.signals
