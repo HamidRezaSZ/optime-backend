@@ -8,21 +8,23 @@ from missions.models import Mission
 def mission_created_signal(sender, instance, update_fields, **kwargs):
     driver = instance.driver
 
-    if driver.mission_set.filter(done=False).exists():
-        driver.free = False
-        driver.save()
-    else:
-        driver.free = True
-        driver.save()
+    if driver:
+        if driver.mission_set.filter(done=False).exists():
+            driver.free = False
+            driver.save()
+        else:
+            driver.free = True
+            driver.save()
 
 
 @receiver(post_delete, sender=Mission)
 def mission_created_signal(sender, instance, **kwargs):
     driver = instance.driver
 
-    if driver.mission_set.filter(done=False).exists():
-        driver.free = False
-        driver.save()
-    else:
-        driver.free = True
-        driver.save()
+    if driver:
+        if driver.mission_set.filter(done=False).exists():
+            driver.free = False
+            driver.save()
+        else:
+            driver.free = True
+            driver.save()

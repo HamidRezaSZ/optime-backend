@@ -7,6 +7,10 @@ class Mission(models.Model):
     description = models.TextField(verbose_name=_('توضیحات'))
     driver = models.ForeignKey(to='drivers.Driver', on_delete=models.CASCADE,
                                verbose_name=_('راننده'), null=True, blank=True)
+    origin_longitude = models.FloatField(default=0, verbose_name=_('طول جغرافیایی مبدا'))
+    origin_latitude = models.FloatField(default=0, verbose_name=_('عرض جغرافیایی مبدا'))
+    destination_longitude = models.FloatField(default=0, verbose_name=_('طول جغرافیایی مقصد'))
+    destination_latitude = models.FloatField(default=0, verbose_name=_('عرض جغرافیایی مقصد'))
     done = models.BooleanField(default=False, verbose_name=_('انجام شده'), help_text='درحال انجام یا انجام شده')
 
     class Meta:
