@@ -12,8 +12,8 @@ docker-compose up
 
 # Admin Panel
 
-After run server you can visit http://127.0.0.1:8000/ in a web browser.
-username: admin
+After run server you can visit http://127.0.0.1:8000/ in a web browser. <br />
+username: admin <br />
 password: admin
 
 # Swagger (Documentation)
