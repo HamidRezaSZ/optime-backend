@@ -1,6 +1,8 @@
 # optime-backend
 
 Post Office Django Rest Project.
+<br /> <br />
+:exclamation: Pay attention, this project is not for production, you must make some changes.
 
 # Start Project
 
