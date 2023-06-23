@@ -26,7 +26,8 @@ class MissionSerializer(serializers.ModelSerializer):
             validated_data['driver'] = nearest_driver(
                 validated_data['origin_longitude'],
                 validated_data['origin_latitude'])
-            validated_data.pop('auto_assign')
+
+        validated_data.pop('auto_assign')
 
         return super().create(validated_data)
 
